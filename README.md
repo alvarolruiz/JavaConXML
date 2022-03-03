@@ -1,2 +1,5 @@
 # LaurinoRuizPracticaXML
-Programa que sirve para generar un dom a partir de una lista, escribir un dom en un fichero xml y imprimir en consola un xml con sax.
+El programa permite:
+- Generar un dom a partir de una lista.
+- Escribir un dom en un fichero xml. 
+- Imprimir en consola un xml con sax.

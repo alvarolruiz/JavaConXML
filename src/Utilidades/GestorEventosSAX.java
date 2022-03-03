@@ -5,6 +5,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GestorEventosSAX extends DefaultHandler {
@@ -12,11 +13,14 @@ public class GestorEventosSAX extends DefaultHandler {
     private boolean descripcion;
     private boolean precio;
     private boolean stock;
-    List<Producto> listaProductos;
-    Producto currentProduct;
+    private ArrayList<Producto> listaProductos = new ArrayList<>();
+    private Producto currentProduct;
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        if(qName.equalsIgnoreCase(ProductoElement.NAME_PRODUCTO)){
+            currentProduct = new Producto();
+        }
         if (qName.equalsIgnoreCase(ProductoElement.ID_PRODUCTO)) {
             id = true;
         }
